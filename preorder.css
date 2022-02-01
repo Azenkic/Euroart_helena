@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+  }
+  
+body{
+    background: url(image/9.jpg);
+    background-repeat: no-repeat;
+    background-size: cover ;
+}
+
+  nav {
+    border-bottom: 3px solid rgb(190, 68, 68);
+    font-family: "Roboto", sans-serif;
+    z-index: 100;
+    width: 100%;
+    position: fixed;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  nav ul li {
+    width: 20%;
+  }
+  
+  .dropdown {
+    display: none;
+  }
+  
+  nav ul li:hover > ul {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dropdown li {
+    width: 100%;
+  }
+  nav a {
+    text-transform: uppercase;
+    display: block;
+    background: #000000;
+    padding: 1rem;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-align: center;
+  }
+  /*dropdown animacija*/
+  @keyframes rotateMenu {
+    0% {
+        transform: rotateX(-90deg)
+    }
+    70% {
+        transform: rotateX(20deg) 
+    }
+    100% {
+        transform: rotateX(0deg) 
+    }
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    width: 20%;
+    animation: rotateMenu 400ms ease-in-out forwards;
+    transform-origin: top center;
+  
+  }
+
+  img{
+    height: 95vh;
+  }
+  
+   nav a:hover {
+     background: rgb(190, 68, 68);
+   }
+   
+   .dropdown li > a {
+     background: #000;
+   }
+   
+   .dropdown li > a:hover {
+     background: rgb(190, 68, 68);
+   }
+   
+   @media (max-width: 600px) {
+     nav ul li {
+       width: 100%;
+     }
+   }
+
+  main {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(pozadina.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .row .input-group {
+    flex-basis: 48%;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid #fff;
+    background: transparent;
+    font-size: 1rem;
+  }
+  
+  label {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    transition: 0.3s;
+    cursor: text;
+  }
+  
+  button {
+    padding: 10px 0;
+    outline: 0;
+    background: transparent;
+    border: 1px solid #fff;
+    width: 100%;
+    cursor: pointer;
+  }
+  /*https://www.w3schools.com/css/css_combinators.asp*/
+  
+  input:focus ~ label,
+  input:valid ~ label,
+  textarea:focus ~ label,
+  textarea:valid ~ label {
+    top: -35px;
+    font-size: 0.75rem;
+  }
+  
